@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/15 16:06:29 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:20:27 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_strlen(const char *s);
 size_t	ft_convert(char type, va_list ap);
 int		ft_print_char(char c);
 int		ft_printf(const char *format, ...);
-void	ft_print_tab(char **array, int len);
+void	ft_print_tab(char **array);
 int		ft_isnumeric(char *str);
 
 #endif
