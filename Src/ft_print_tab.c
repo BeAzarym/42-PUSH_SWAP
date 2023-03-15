@@ -6,16 +6,20 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 14:37:17 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/15 15:13:53 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:11:40 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/push_swap.h"
 
-void	ft_print_tab(char **array, int len)
+void	ft_print_tab(char **array)
 {
 	int i;
+	int len;
 	
+	len = 0;
+	while (array[len] != NULL)
+		len++;
 	i = -1;
 	while (++i < len)
 		ft_printf("[%d]->|%s|\n",i,array[i]);
