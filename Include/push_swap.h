@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/15 17:20:27 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:49:40 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct s_stack
 {
-	int				content;
-	struct s_stack *next;
+	int					content;
+	struct s_stack		*next;
 }		t_stack;
 
 char	**ft_split(char const *s, char c);
