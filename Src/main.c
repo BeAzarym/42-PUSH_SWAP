@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/15 17:52:33 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:44:34 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,8 @@ int	main(int argc, char **argv)
 				return (3);
 		}
 	}
-	ft_print_tab(array);
+	if (is_double(array, ft_tablen(array)))
+		return (4);
+	else
+		ft_print_tab(array);
 }

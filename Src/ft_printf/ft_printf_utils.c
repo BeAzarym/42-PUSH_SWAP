@@ -6,11 +6,11 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:23:46 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/15 15:16:11 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:32:06 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Include/push_swap.h"
+#include "../../Include/push_swap.h"
 
 static int	ft_print_str(char *str)
 {

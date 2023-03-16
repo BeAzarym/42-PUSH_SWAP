@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/16 10:31:41 by cchabeau         ###   ########.fr       */
+/*   Created: 2023/03/16 10:22:00 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/03/16 10:22:23 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/push_swap.h"
 
-int	is_double(char **array, int len)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
-	int j;
-	
+	size_t	i;
+
 	i = 0;
-	j = 1;
-	while (i < len)
+	while ((unsigned char)s1[i] == (unsigned char)s2[i])
 	{
-		while (j < len)
-		{
-			if (ft_strcmp(array[i],array[j]) != 0)
-				j++;
-			else
-				return (1);
-		}
+		if ((unsigned char)s1[i] == '\0' && (unsigned char)s2[i] == '\0')
+			return (0);
 		i++;
-		j = i + 1;
 	}
-	return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

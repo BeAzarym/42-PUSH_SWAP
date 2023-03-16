@@ -4,10 +4,11 @@ SRC	=	parsing.c \
 		main.c \
 		ft_split.c \
 		ft_strlen.c \
-		ft_print_tab.c \
-		ft_printf.c \
-		ft_printf_utils.c \
+		ft_printf/ft_print_tab.c \
+		ft_printf/ft_printf.c \
+		ft_printf/ft_printf_utils.c \
 		ft_isdigit.c \
+		ft_strcmp.c \
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
 
