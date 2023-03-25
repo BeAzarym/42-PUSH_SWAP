@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/16 10:42:55 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/25 20:49:02 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_stack
 
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
-size_t	ft_tablen(char **array);
 size_t	ft_convert(char type, va_list ap);
 int		ft_print_char(char c);
 int		ft_printf(const char *format, ...);
@@ -34,7 +33,8 @@ void	ft_print_tab(char **array);
 int		ft_isnumeric(char *str);
 int		is_double(char **array, int len);
 int		ft_strcmp(const char *s1, const char *s2);
-
-
+int		is_validArg(int argc, char **argv);
+void	free_tab(char **array);
+char	*ft_strdup(const char *s);
 
 #endif

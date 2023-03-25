@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_free_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 10:22:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/16 10:22:23 by cchabeau         ###   ########.fr       */
+/*   Created: 2023/03/24 15:33:11 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/03/25 20:19:26 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Include/push_swap.h"
+#include "../../Include/push_swap.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	free_tab(char **array)
 {
-	size_t	i;
-
+	int	i;
+	
 	i = 0;
-	while ((unsigned char)s1[i] == (unsigned char)s2[i])
-	{
-		if ((unsigned char)s1[i] == '\0' && (unsigned char)s2[i] == '\0')
-			return (0);
+	// while (array[i])
+	// {
+	// 	free(array[i]);
+	// 	i++;
+	// }
+	while (array[i] != NULL)
 		i++;
+	while (i >= 0)
+	{
+		free(array[i]);
+		i--;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	free(array);
 }

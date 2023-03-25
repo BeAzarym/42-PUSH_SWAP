@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_tab.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 14:37:17 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/25 20:40:49 by cchabeau         ###   ########.fr       */
+/*   Created: 2022/10/17 14:33:58 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/03/25 20:50:11 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-void	ft_print_tab(char **array)
+char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	len;
+	char	*dup;
+	int		slen;
 
-	len = 0;
-	while (array[len] != NULL)
-		len++;
-	i = 0;
-	while (i != len)
-		{
-		ft_printf("[%d]->|%s|\n", i, array[i]);
-		i++;
-		}
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	dup = malloc(sizeof(char) * (slen + 1));
+	if (!dup)
+		return (NULL);
+	while (*s != '\0')
+		*dup++ = *s++;
+	*dup = '\0';
+	return (dup - slen);
 }

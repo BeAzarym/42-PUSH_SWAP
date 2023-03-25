@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 12:20:19 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/15 16:18:14 by cchabeau         ###   ########.fr       */
+/*   Created: 2023/03/16 10:22:00 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/03/16 13:13:40 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Include/push_swap.h"
+#include "../../Include/push_swap.h"
 
-int	ft_isnumeric(char *str)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	while (*str)
+	size_t	i;
+
+	i = 0;
+	while ((unsigned char)s1[i] == (unsigned char)s2[i])
 	{
-		if ((*str >= 48 && *str <= 57) || *str == 45)
-			str++;
-		else
+		if ((unsigned char)s1[i] == '\0' && (unsigned char)s2[i] == '\0')
 			return (0);
+		i++;
 	}
-	return (1);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

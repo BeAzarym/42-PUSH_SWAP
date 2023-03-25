@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 13:27:59 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/16 10:42:31 by cchabeau         ###   ########.fr       */
+/*   Created: 2022/10/04 12:20:19 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/03/16 13:13:21 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Include/push_swap.h"
+#include "../../Include/push_swap.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isnumeric(char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-size_t	ft_tablen(char **array)
-{
-	size_t	i;
-
-	i = 0;
-	while (array[i] != NULL)
-		i++;
-	return (i);
+	while (*str)
+	{
+		if ((*str >= 48 && *str <= 57) || *str == 45)
+			str++;
+		else
+			return (0);
+	}
+	return (1);
 }
