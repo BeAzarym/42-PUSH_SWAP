@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/24 15:28:21 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:18:11 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,23 @@ int	is_validArg(int argc, char **argv)
 	return (1);	
 }
 
+char	**ft_get_arg(int argc, char **argv)
+{
+	int		i;
+	char	**array;
+
+	i = 0;
+	if (argc == 2)
+		array = ft_split(argv[1], ' ');
+	else
+	{
+		array = malloc(sizeof(char *) * argc);
+		if (!array)
+			return (NULL);
+		while (++i < argc)
+			array[i - 1] = ft_strdup(argv[i]);
+	}
+	if (!is_validArg(argc - 1, array) && is_double(array, argc - 1))
+		return (NULL);
+	return (array);
+}
