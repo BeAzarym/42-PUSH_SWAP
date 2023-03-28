@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/28 19:46:36 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:17:16 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	is_validArg(int argc, char **argv)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		if (ft_isnumeric(argv[i]))
@@ -66,6 +66,9 @@ char	**ft_get_arg(int argc, char **argv)
 			array[i - 1] = ft_strdup(argv[i]);
 	}
 	if (!is_validArg(ft_tablen(array), array) || is_double(array, ft_tablen(array)))
+	{
+		free_tab(array);
 		return (NULL);
+	}	
 	return (array);
 }
