@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/27 17:11:45 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:46:09 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		is_validArg(int argc, char **argv);
 void	free_tab(char **array);
 char	*ft_strdup(const char *s);
 char	**ft_get_arg(int argc, char **argv);
+size_t	ft_tablen(char **array);
 
 #endif
