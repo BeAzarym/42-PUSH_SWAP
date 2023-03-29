@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/29 23:24:39 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/29 23:26:34 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ enum e_type
 
 typedef struct s_structure
 {
-	struct s_stack		head;
-	struct s_stack		tail;		
+	struct s_stack		*head;
+	struct s_stack		*tail;		
 }		t_structure;
 
 typedef struct s_stack
