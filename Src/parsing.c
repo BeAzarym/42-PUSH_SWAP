@@ -6,13 +6,13 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/28 20:17:16 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:34:06 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/push_swap.h"
 
-int	is_double(char **array, int len)
+int	is_double(int len, char **array)
 {
 	int i;
 	int j;
@@ -34,14 +34,14 @@ int	is_double(char **array, int len)
 	return (0);
 }
 
-int	is_validArg(int argc, char **argv)
+int	is_validArg(int len, char **array)
 {
 	int	i;
 
 	i = 0;
-	while (i < argc)
+	while (i < len)
 	{
-		if (ft_isnumeric(argv[i]))
+		if (ft_isnumeric(array[i]))
 			i++;
 		else
 			return (0);
@@ -65,10 +65,11 @@ char	**ft_get_arg(int argc, char **argv)
 		while (++i < argc)
 			array[i - 1] = ft_strdup(argv[i]);
 	}
-	if (!is_validArg(ft_tablen(array), array) || is_double(array, ft_tablen(array)))
+	if (!is_validArg(ft_tablen(array), array) || is_double(ft_tablen(array), array))
 	{
 		free_tab(array);
-		return (NULL);
+		ft_putstr_fd("Error\n",2);
+		exit(EXIT_FAILURE);
 	}	
 	return (array);
 }

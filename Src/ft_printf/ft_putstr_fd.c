@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/29 16:58:44 by cchabeau         ###   ########.fr       */
+/*   Created: 2022/10/24 23:38:44 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/03/28 20:31:25 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Include/push_swap.h"
+#include "../../Include/push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	**array;
-	int 	i;
-	t_stack *stack;
-	
-	stack = NULL;
-	if (argc < 2)
-		return (1);
-	array = ft_get_arg(argc, argv);
-	i = ft_tablen(array) - 1;
-	while (i >= 0)
-	{
-		stack = push_stack(ft_atoi(array[i]), stack);
-		i--;
-	}
-	free_tab(array);
-	print_stack(stack);
-	return (0);
+	if (!s || fd < 0)
+		return ;
+	write(2, s, ft_strlen(s));
 }
