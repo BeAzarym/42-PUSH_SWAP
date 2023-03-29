@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/29 16:54:41 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/29 20:28:10 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+
+enum e_type
+{
+	T_STACK = 1,
+	ARRAY	= 2
+};
 
 typedef struct s_stack
 {
@@ -45,6 +51,7 @@ t_stack	*push_stack(int nbr, t_stack *stack);
 t_stack	*pop_stack(t_stack *stack);
 void	print_stack(t_stack *stack);
 int		ft_atoi(const char *str);
-
+void	free_stack(t_stack *stack);
+void	ft_error(void *ptr, int type);
 
 #endif
