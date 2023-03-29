@@ -14,6 +14,7 @@ SRC	=	main.c \
 		utils/ft_atoi.c \
 		error/ft_error.c \
 		stack/init_stack.c \
+		stack/stack_handling.c \
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
 

@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack.c                                       :+:      :+:    :+:   */
+/*   stack_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 00:48:24 by cchabeau         ###   ########.fr       */
+/*   Created: 2023/03/30 00:20:23 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/03/30 00:22:21 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-t_stack		*init_stack(int	nbr)
+t_stack		*push_stack(int nbr, t_stack *stack)
 {
-	t_stack *new;
-	
-	new = malloc(sizeof(t_stack));
+	t_stack	*new;
+
+	new = init_stack(nbr);
 	if (!new)
 		return (NULL);
-	new->content = nbr;
-	new->next = NULL;
-	new->index = 0;
-	return (new);
+	new->next = stack;
+	return (new);	
 }
 
-t_stack	*fill_stack(char **array, t_stack *stack)
+t_stack		*pop_stack(t_stack *stack)
 {
-	int	i;
-
-	i = ft_tablen(array) - 1;
-	while (i >= 0)
-	{
-		stack = push_stack(ft_atoi(array[i]), stack);
-		i--;
-	}
-	free_tab(array);
+	t_stack *tmp;
+	tmp = stack;
+	stack = stack->next;
+	free(tmp);
 	return (stack);
 }

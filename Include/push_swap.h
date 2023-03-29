@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/29 23:26:34 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 00:48:58 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ char	**ft_get_arg(int argc, char **argv);
 t_stack	*init_stack(int	nbr);
 t_stack	*push_stack(int nbr, t_stack *stack);
 t_stack	*pop_stack(t_stack *stack);
+t_stack	*fill_stack(char **array, t_stack *stack);
 
 #endif
