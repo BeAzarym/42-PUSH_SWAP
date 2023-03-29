@@ -1,18 +1,18 @@
 NAME	=	push_swap
 
-SRC	=	parsing.c \
-		main.c \
-		ft_printf/ft_print_tab.c \
-		ft_printf/ft_printf.c \
-		ft_printf/ft_printf_utils.c \
-		ft_printf/ft_putstr_fd.c \
+SRC	=	main.c \
+		parsing/parsing.c \
+		print/ft_print_tab.c \
+		print/ft_printf.c \
+		print/ft_printf_utils.c \
+		print/ft_putstr_fd.c \
 		utils/ft_split.c \
 		utils/ft_strlen.c \
 		utils/ft_isnumeric.c \
 		utils/ft_strcmp.c \
 		utils/ft_strdup.c \
 		utils/ft_atoi.c \
-		utils/ft_error.c \
+		error/ft_error.c \
 		stack/init_stack.c \
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
