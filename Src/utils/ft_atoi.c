@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:36:57 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 18:42:35 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 19:04:45 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ long int	ft_atoi(const char *str)
 		result = (result * 10) + (*str - 48);
 		str++;
 		if ((result * sign) < INT_MIN || result > INT_MAX)
-			break;
+			break ;
 	}
 	return (result * sign);
 }
