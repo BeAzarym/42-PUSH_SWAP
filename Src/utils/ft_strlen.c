@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:27:59 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/28 19:45:58 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:45:39 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
 size_t	ft_tablen(char **array)
 {
 	size_t	i;

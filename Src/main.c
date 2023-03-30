@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 15:21:17 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:39:01 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	main(int argc, char **argv)
 {
 	char	**array;
-	t_stack *stack;
-	
+	t_stack	*stack;
+
 	stack = NULL;
 	if (argc < 2)
 		return (0);

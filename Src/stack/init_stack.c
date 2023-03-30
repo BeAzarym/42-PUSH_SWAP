@@ -6,16 +6,16 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 15:05:09 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:42:32 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-t_stack		*init_stack(int	nbr)
+t_stack	*init_stack(int nbr)
 {
-	t_stack *new;
-	
+	t_stack	*new;
+
 	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
@@ -32,7 +32,7 @@ t_stack	*fill_stack(char **array, t_stack *stack)
 	i = ft_tablen(array) - 1;
 	while (i >= 0)
 	{
-		if (is_double(ft_atoi(array[i]), stack)  )
+		if (is_double(ft_atoi(array[i]), stack))
 		{
 			free_tab(array);
 			ft_error(stack, T_STACK);

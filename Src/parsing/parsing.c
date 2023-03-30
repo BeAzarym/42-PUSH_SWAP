@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 15:26:24 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:41:11 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_double(long int nbr, t_stack *stack)
 	return (0);
 }
 
-int	is_validArg(int len, char **array)
+static int	is_valid_arg(int len, char **array)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ int	is_validArg(int len, char **array)
 		else
 			return (0);
 	}
-	return (1);	
+	return (1);
 }
 
 char	**ft_get_arg(int argc, char **argv)
@@ -59,7 +59,7 @@ char	**ft_get_arg(int argc, char **argv)
 		while (++i < argc)
 			array[i - 1] = ft_strdup(argv[i]);
 	}
-	if (!is_validArg(ft_tablen(array), array))
+	if (!is_valid_arg(ft_tablen(array), array))
 		ft_error(array, ARRAY);
 	return (array);
 }
