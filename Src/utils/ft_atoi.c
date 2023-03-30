@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:36:57 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 15:15:40 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:42:35 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ long int	ft_atoi(const char *str)
 {
 	int				sign;
 	long int		result;
-	long int		tmp;
 
 	sign = 1;
 	result = 0;
@@ -39,13 +38,10 @@ long int	ft_atoi(const char *str)
 	}
 	while (*str >= 48 && *str <= 57)
 	{
-		tmp = result;
 		result = (result * 10) + (*str - 48);
 		str++;
-		if (result < tmp && sign == 1)
-			return (result);
-		if (result < tmp && sign == -1)
-			return (result);
+		if ((result * sign) < INT_MIN || result > INT_MAX)
+			break;
 	}
 	return (result * sign);
 }
