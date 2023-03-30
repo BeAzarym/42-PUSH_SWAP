@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 00:48:24 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:35:52 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,19 @@ t_stack		*init_stack(int	nbr)
 
 t_stack	*fill_stack(char **array, t_stack *stack)
 {
-	int	i;
+	int		i;
 
 	i = ft_tablen(array) - 1;
 	while (i >= 0)
 	{
-		stack = push_stack(ft_atoi(array[i]), stack);
-		i--;
+		if (is_double(ft_atoi(array[i]), stack))
+		{
+			free_tab(array);
+			ft_error(stack, T_STACK);
+		}
+		else
+			stack = push_stack(ft_atoi(array[i]), stack);
+		i--;	
 	}
 	free_tab(array);
 	return (stack);

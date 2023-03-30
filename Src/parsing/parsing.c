@@ -6,30 +6,20 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/29 23:11:38 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:36:24 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-int	is_double(int len, char **array)
+int	is_double(int nbr, t_stack *stack)
 {
-	int i;
-	int j;
-	
-	i = 0;
-	j = 1;
-	while (i < len)
+	while (stack)
 	{
-		while (j < len)
-		{
-			if (ft_strcmp(array[i],array[j]) != 0)
-				j++;
-			else
-				return (1);
-		}
-		i++;
-		j = i + 1;
+		if (stack->content == nbr)
+			return (1);
+		else
+			stack = stack->next;
 	}
 	return (0);
 }
@@ -65,7 +55,7 @@ char	**ft_get_arg(int argc, char **argv)
 		while (++i < argc)
 			array[i - 1] = ft_strdup(argv[i]);
 	}
-	if (!is_validArg(ft_tablen(array), array) || is_double(ft_tablen(array), array))
+	if (!is_validArg(ft_tablen(array), array))
 		ft_error(array, ARRAY);
 	return (array);
 }

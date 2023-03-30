@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 00:48:58 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:15:53 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	free_stack(t_stack *stack);
 void	ft_error(void *ptr, int type);
 
 //	PARSING
-int		is_double(int len, char **array);
+int		is_double(int nbr, t_stack *stack);
 int		is_validArg(int len, char **array);
 char	**ft_get_arg(int argc, char **argv);
 
