@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:36:57 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/29 18:37:29 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 15:15:40 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
 	int				sign;
 	long int		result;
@@ -43,9 +43,9 @@ int	ft_atoi(const char *str)
 		result = (result * 10) + (*str - 48);
 		str++;
 		if (result < tmp && sign == 1)
-			return (-1);
+			return (result);
 		if (result < tmp && sign == -1)
-			return (0);
+			return (result);
 	}
-	return ((int)result * sign);
+	return (result * sign);
 }

@@ -6,14 +6,16 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 13:36:24 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 15:26:24 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-int	is_double(int nbr, t_stack *stack)
+int	is_double(long int nbr, t_stack *stack)
 {
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		return (1);
 	while (stack)
 	{
 		if (stack->content == nbr)
@@ -29,6 +31,8 @@ int	is_validArg(int len, char **array)
 	int	i;
 
 	i = 0;
+	if (len == 0)
+		return (0);
 	while (i < len)
 	{
 		if (ft_isnumeric(array[i]))

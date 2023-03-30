@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 00:48:30 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 15:21:17 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	
 	stack = NULL;
 	if (argc < 2)
-		return (1);
+		return (0);
 	array = ft_get_arg(argc, argv);
 	stack = fill_stack(array, stack);
 	print_stack(stack);
