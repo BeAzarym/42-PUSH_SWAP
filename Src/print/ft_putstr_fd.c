@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 23:38:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/28 20:31:25 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:32:21 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s || fd < 0)
 		return ;
-	write(2, s, ft_strlen(s));
+	write(fd, s, ft_strlen(s));
 }

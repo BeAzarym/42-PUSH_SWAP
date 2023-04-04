@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 16:42:32 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:39:40 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack	*init_stack(int nbr)
 
 t_stack	*fill_stack(char **array, t_stack *stack)
 {
-	int		i;
+	int	i;
 
 	i = ft_tablen(array) - 1;
 	while (i >= 0)
