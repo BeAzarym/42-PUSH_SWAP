@@ -15,6 +15,8 @@ SRC	=	main.c \
 		error/ft_error.c \
 		stack/init_stack.c \
 		stack/stack_handling.c \
+		stack/swap_stack.c \
+		stack/structure_handling.c \
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
 

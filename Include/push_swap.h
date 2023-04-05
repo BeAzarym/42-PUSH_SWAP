@@ -6,68 +6,78 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 16:48:08 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:56:11 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <limits.h>
+# include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
-# include <limits.h>
 
-enum e_type
+enum				e_type
 {
 	T_STACK = 1,
-	ARRAY	= 2
+	ARRAY = 2
 };
 
 typedef struct s_structure
 {
-	struct s_stack		*head;
-	struct s_stack		*tail;		
-}		t_structure;
+	struct s_stack	*head;
+	struct s_stack	*tail;
+}					t_structure;
 
 typedef struct s_stack
 {
-	int					content;
-	int					index;
-	struct s_stack		*next;
-}		t_stack;
+	int				content;
+	int				index;
+	struct s_stack	*next;
+}					t_stack;
 
 //	UTILS
-char		**ft_split(char const *s, char c);
-size_t		ft_strlen(const char *s);
-int			ft_strcmp(const char *s1, const char *s2);
-int			ft_isnumeric(char *str);
-char		*ft_strdup(const char *s);
-size_t		ft_tablen(char **array);
-void		ft_putstr_fd(char *s, int fd);
-long int	ft_atoi(const char *str);
+char				**ft_split(char const *s, char c);
+size_t				ft_strlen(const char *s);
+int					ft_strcmp(const char *s1, const char *s2);
+int					ft_isnumeric(char *str);
+char				*ft_strdup(const char *s);
+size_t				ft_tablen(char **array);
+void				ft_putstr_fd(char *s, int fd);
+long int			ft_atoi(const char *str);
 
 //	PRINT
-size_t		ft_convert(char type, va_list ap);
-int			ft_print_char(char c);
-int			ft_printf(const char *format, ...);
-void		ft_print_tab(char **array);
-void		print_stack(t_stack *stack);
+size_t				ft_convert(char type, va_list ap);
+int					ft_print_char(char c);
+int					ft_printf(const char *format, ...);
+void				ft_print_tab(char **array);
+void				print_stack(t_structure *structure);
 
 //	ERROR
-void		free_tab(char **array);
-void		free_stack(t_stack *stack);
-void		ft_error(void *ptr, int type);
+void				free_tab(char **array);
+void				free_stack(t_structure *structure);
+void				ft_error(void *ptr, int type);
 
 //	PARSING
-int			is_double(long int nbr, t_stack *stack);
-char		**ft_get_arg(int argc, char **argv);
+int					is_double(long int nbr, t_structure *structure);
+char				**ft_get_arg(int argc, char **argv);
 
 //	STACK
-t_stack		*init_stack(int nbr);
-t_stack		*push_stack(int nbr, t_stack *stack);
-t_stack		*pop_stack(t_stack *stack);
-t_stack		*fill_stack(char **array, t_stack *stack);
+t_stack				*init_stack(int nbr);
+t_structure			*init_structure(char **array);
+t_structure			*push_stack(int nbr, t_structure *structure);
+t_structure			*pop_stack(t_structure *structure);
+t_structure			*fill_structure(char **array, t_structure *structure);
+void				ft_lstadd_front(t_structure *structure, t_stack *stack);
+void				ft_lstadd_back(t_structure *structure, t_stack *stack);
+
+//	OPERATION
+void				swap_a(t_structure *structure);
+void				swap_b(t_structure *structure);
+void				swap_ab(t_structure *structure_a, t_structure *structure_b);
+void				push_a(t_structure *src, t_structure *dest);
+void				push_b(t_structure *src, t_structure *dest);
 
 #endif

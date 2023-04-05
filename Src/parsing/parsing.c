@@ -6,14 +6,16 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 16:41:11 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:33:41 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-int	is_double(long int nbr, t_stack *stack)
+int	is_double(long int nbr, t_structure *structure)
 {
+	t_stack	*stack;
+	stack = structure->head;
 	if (nbr > INT_MAX || nbr < INT_MIN)
 		return (1);
 	while (stack)

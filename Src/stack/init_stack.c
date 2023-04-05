@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/31 17:39:40 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:55:15 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,32 @@ t_stack	*init_stack(int nbr)
 	return (new);
 }
 
-t_stack	*fill_stack(char **array, t_stack *stack)
+t_structure	*fill_structure(char **array, t_structure *structure)
 {
 	int	i;
-
+	
 	i = ft_tablen(array) - 1;
 	while (i >= 0)
 	{
-		if (is_double(ft_atoi(array[i]), stack))
+		if (is_double(ft_atoi(array[i]), structure))
 		{
 			free_tab(array);
-			ft_error(stack, T_STACK);
+			ft_error(structure, T_STACK);
 		}
 		else
-			stack = push_stack(ft_atoi(array[i]), stack);
+			structure = push_stack(ft_atoi(array[i]), structure);
 		i--;
 	}
 	free_tab(array);
-	return (stack);
+	return (structure);
+}
+
+t_structure *init_structure(char **array)
+{
+	t_structure *structure;
+	structure = malloc(sizeof(t_structure));
+	structure->head = NULL;
+	structure->tail = NULL;
+	structure = fill_structure(array, structure);
+	return (structure);
 }

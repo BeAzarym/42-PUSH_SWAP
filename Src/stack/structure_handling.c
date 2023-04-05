@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_handling.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 00:20:23 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/05 16:37:40 by cchabeau         ###   ########.fr       */
+/*   Created: 2022/10/25 18:10:30 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/04/05 15:01:18 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-t_structure	*push_stack(int nbr, t_structure *structure)
+void	ft_lstadd_front(t_structure *structure, t_stack *stack)
 {
-	t_stack	*new;
-
-	new = init_stack(nbr);
-	if (!new)
-		return (NULL);
+	if (!structure || !stack)
+		return ;
 	if (!structure->head)
 	{
-		structure->head = new;
-		structure->tail = new;
+		structure->head = stack;
+		structure->tail = stack;
+	}
+	stack->next = structure->head;
+	structure->head = stack;
+}
+
+void	ft_lstadd_back(t_structure *structure, t_stack *stack)
+{
+	if (!stack || !structure)
+		return ;
+	if (!structure->tail)
+	{
+		structure->tail = stack;
+		structure->head = stack;
+		return ;
 	}
 	else
 	{
-		new->next = structure->head;
-		structure->head = new;
+		structure->tail->next = stack;
+		structure->tail = stack;
 	}
-	return (structure);
-}
-
-t_structure	*pop_stack(t_structure *structure)
-{
-	t_stack	*tmp;
-
-	tmp = structure->head;
-	structure->head = structure->head->next;
-	free(tmp);
-	return (structure);
 }

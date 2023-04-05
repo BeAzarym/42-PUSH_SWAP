@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 17:33:07 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:55:48 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 int	main(int argc, char **argv)
 {
-	char	**array;
-	t_stack	*stack;
+	char		**array;
+	t_structure	*structure_a;
 
+	// t_stack *stack_b;
 	array = NULL;
-	stack = NULL;
+	structure_a = NULL;
+	// stack_b = NULL;
 	if (argc < 2)
 		return (0);
 	array = ft_get_arg(argc, argv);
-	stack = fill_stack(array, stack);
-	print_stack(stack);
-	free_stack(stack);
+	structure_a = init_structure(array);
+	print_stack(structure_a);
+	swap_a(structure_a);
+	print_stack(structure_a);
+	free_stack(structure_a);
 	return (0);
 }

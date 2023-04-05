@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 20:16:40 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/30 16:39:39 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:11:01 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ void	free_tab(char **array)
 	free(array);
 }
 
-void	free_stack(t_stack *stack)
+void	free_stack(t_structure *structure)
 {
-	while (stack != NULL)
-		stack = pop_stack(stack);
+	while (structure->head != NULL)
+		structure = pop_stack(structure);
+	free(structure);
 }
 
 void	ft_error(void *ptr, int type)
