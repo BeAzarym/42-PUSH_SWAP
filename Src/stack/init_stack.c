@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/05 16:55:15 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/06 16:11:59 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,18 @@ t_structure	*fill_structure(char **array, t_structure *structure)
 			ft_error(structure, T_STACK);
 		}
 		else
-			structure = push_stack(ft_atoi(array[i]), structure);
+			structure = create_stack(ft_atoi(array[i]), structure);
 		i--;
 	}
 	free_tab(array);
 	return (structure);
 }
 
-t_structure *init_structure(char **array)
+t_structure *init_structure()
 {
 	t_structure *structure;
 	structure = malloc(sizeof(t_structure));
 	structure->head = NULL;
 	structure->tail = NULL;
-	structure = fill_structure(array, structure);
 	return (structure);
 }

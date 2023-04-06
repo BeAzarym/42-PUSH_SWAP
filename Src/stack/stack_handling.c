@@ -6,13 +6,13 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 00:20:23 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/05 16:37:40 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/06 16:12:15 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-t_structure	*push_stack(int nbr, t_structure *structure)
+t_structure	*create_stack(int nbr, t_structure *structure)
 {
 	t_stack	*new;
 

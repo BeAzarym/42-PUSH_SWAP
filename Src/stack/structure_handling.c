@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   structure_handling.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:10:30 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/05 15:01:18 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/06 16:14:39 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ void	ft_lstadd_front(t_structure *structure, t_stack *stack)
 	{
 		structure->head = stack;
 		structure->tail = stack;
+		stack->next = NULL;
 	}
-	stack->next = structure->head;
-	structure->head = stack;
+	else
+	{
+		stack->next = structure->head;
+		structure->head = stack;
+	}
 }
 
 void	ft_lstadd_back(t_structure *structure, t_stack *stack)
