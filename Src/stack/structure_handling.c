@@ -6,13 +6,13 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:10:30 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/06 16:19:35 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:05:35 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-void	ft_lstadd_front(t_structure *structure, t_stack *stack)
+void	ft_lstadd_front(t_body *structure, t_stack *stack)
 {
 	if (!structure || !stack)
 		return ;
@@ -29,7 +29,7 @@ void	ft_lstadd_front(t_structure *structure, t_stack *stack)
 	}
 }
 
-void	ft_lstadd_back(t_structure *structure, t_stack *stack)
+void	ft_lstadd_back(t_body *structure, t_stack *stack)
 {
 	if (!stack || !structure)
 		return ;

@@ -6,13 +6,13 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:13:12 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/05 16:49:18 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:05:46 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-static void	swap(t_structure *structure)
+static void	swap(t_body *structure)
 {
 	t_stack	*first;
 	t_stack *second;
@@ -29,7 +29,7 @@ static void	swap(t_structure *structure)
 	structure->head->next->next = third;
 }
 
-void	swap_a(t_structure *structure)
+void	swap_a(t_body *structure)
 {
 	if (!structure->head || !structure->head->next)
 		return ;
@@ -37,7 +37,7 @@ void	swap_a(t_structure *structure)
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	swap_b(t_structure *structure)
+void	swap_b(t_body *structure)
 {
 	if (!structure->head || !structure->head->next)
 		return ;
@@ -45,7 +45,7 @@ void	swap_b(t_structure *structure)
 	ft_putstr_fd("sb\n", 1);
 }
 
-void	swap_ab(t_structure *structure_a, t_structure *structure_b)
+void	swap_ab(t_body *structure_a, t_body *structure_b)
 {
 	if (!structure_a->head || !structure_a->head->next)
 		return ;

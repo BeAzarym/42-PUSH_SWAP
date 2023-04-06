@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/06 16:11:05 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:08:14 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_structure
 {
 	struct s_stack	*head;
 	struct s_stack	*tail;
-}					t_structure;
+}					t_body;
 
 typedef struct s_stack
 {
@@ -53,31 +53,35 @@ size_t				ft_convert(char type, va_list ap);
 int					ft_print_char(char c);
 int					ft_printf(const char *format, ...);
 void				ft_print_tab(char **array);
-void				print_stack(t_structure *structure_a, t_structure *structure_b);
+void	print_stack(t_body *structure_a,
+					t_body *structure_b);
 
 //	ERROR
 void				free_tab(char **array);
-void				free_stack(t_structure *structure);
+void				free_stack(t_body *structure);
 void				ft_error(void *ptr, int type);
 
 //	PARSING
-int					is_double(long int nbr, t_structure *structure);
+int					is_double(long int nbr, t_body *structure);
 char				**ft_get_arg(int argc, char **argv);
 
 //	STACK
 t_stack				*init_stack(int nbr);
-t_structure			*init_structure();
-t_structure			*create_stack(int nbr, t_structure *structure);
-t_structure			*pop_stack(t_structure *structure);
-t_structure			*fill_structure(char **array, t_structure *structure);
-void				ft_lstadd_front(t_structure *structure, t_stack *stack);
-void				ft_lstadd_back(t_structure *structure, t_stack *stack);
+t_body				*init_body(void);
+t_body				*create_stack(int nbr, t_body *structure);
+t_body				*pop_stack(t_body *structure);
+t_body				*fill_structure(char **array, t_body *structure);
+void				ft_lstadd_front(t_body *structure, t_stack *stack);
+void				ft_lstadd_back(t_body *structure, t_stack *stack);
 
 //	OPERATION
-void				swap_a(t_structure *structure);
-void				swap_b(t_structure *structure);
-void				swap_ab(t_structure *structure_a, t_structure *structure_b);
-void				push_a(t_structure *src, t_structure *dest);
-void				push_b(t_structure *src, t_structure *dest);
+void				swap_a(t_body *structure);
+void				swap_b(t_body *structure);
+void				swap_ab(t_body *structure_a, t_body *structure_b);
+void				push_a(t_body *src, t_body *dest);
+void				push_b(t_body *src, t_body *dest);
+void				rotate_a(t_body *structure);
+void				rotate_b(t_body *structure);
+void				rotate_ab(t_body *structure_a, t_body *structure_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 14:37:17 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/06 16:10:48 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:04:43 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_print_tab(char **array)
 		ft_printf("[%d]->|%s|\n", i, array[i]);
 }
 
-void	print_stack(t_structure *structure_a, t_structure *structure_b)
+void	print_stack(t_body *structure_a, t_body *structure_b)
 {
 	t_stack *stack_a;
 	t_stack *stack_b;

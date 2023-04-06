@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/06 16:11:59 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:08:43 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack	*init_stack(int nbr)
 	return (new);
 }
 
-t_structure	*fill_structure(char **array, t_structure *structure)
+t_body	*fill_structure(char **array, t_body *structure)
 {
 	int	i;
 	
@@ -45,10 +45,10 @@ t_structure	*fill_structure(char **array, t_structure *structure)
 	return (structure);
 }
 
-t_structure *init_structure()
+t_body *init_body()
 {
-	t_structure *structure;
-	structure = malloc(sizeof(t_structure));
+	t_body *structure;
+	structure = malloc(sizeof(t_body));
 	structure->head = NULL;
 	structure->tail = NULL;
 	return (structure);
