@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/07 11:36:45 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/07 21:56:21 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int argc, char **argv)
 	structure_a = fill_structure(array, structure_a);
 	print_stack(structure_a, structure_b);
 	reverse_rotate_a(structure_a);
-	sleep(1);
 	print_stack(structure_a, structure_b);
 	free_stack(structure_a);
 	free_stack(structure_b);

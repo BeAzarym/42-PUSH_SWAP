@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 16:31:38 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/07 12:30:19 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/07 21:56:56 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rotate_a(t_body *structure)
 void	rotate_b(t_body *structure)
 {
 	rotate(structure);
-	ft_putstr_fd("ra\n", 1);
+	ft_putstr_fd("rb\n", 1);
 }
 
 void	rotate_ab(t_body *structure_a, t_body *structure_b)
