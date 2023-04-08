@@ -6,11 +6,28 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:43:37 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/06 18:05:08 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:46:26 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
+
+static void	ft_lstadd_front(t_body *structure, t_stack *stack)
+{
+	if (!structure || !stack)
+		return ;
+	if (!structure->head)
+	{
+		structure->head = stack;
+		structure->tail = stack;
+		stack->next = NULL;
+	}
+	else
+	{
+		stack->next = structure->head;
+		structure->head = stack;
+	}
+}
 
 static void	push_stack(t_body *src, t_body *dest)
 {

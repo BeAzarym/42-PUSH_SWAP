@@ -6,13 +6,13 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/07 16:16:23 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:52:58 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-t_stack	*init_stack(int nbr)
+static t_stack	*init_stack(int nbr)
 {
 	t_stack	*new;
 
@@ -24,11 +24,30 @@ t_stack	*init_stack(int nbr)
 	new->index = 0;
 	return (new);
 }
+static t_body	*create_stack(int nbr, t_body *structure)
+{
+	t_stack	*new;
+
+	new = init_stack(nbr);
+	if (!new)
+		return (NULL);
+	if (!structure->head)
+	{
+		structure->head = new;
+		structure->tail = new;
+	}
+	else
+	{
+		new->next = structure->head;
+		structure->head = new;
+	}
+	return (structure);
+}
 
 t_body	*fill_structure(char **array, t_body *structure)
 {
 	int	i;
-	
+
 	i = ft_tablen(array) - 1;
 	while (i >= 0)
 	{
@@ -45,9 +64,10 @@ t_body	*fill_structure(char **array, t_body *structure)
 	return (structure);
 }
 
-t_body *init_body()
+t_body	*init_body(void)
 {
-	t_body *structure;
+	t_body	*structure;
+
 	structure = malloc(sizeof(t_body));
 	structure->head = NULL;
 	structure->tail = NULL;

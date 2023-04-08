@@ -14,9 +14,7 @@ SRC	=	main.c \
 		utils/ft_atoi.c \
 		error/ft_error.c \
 		stack/init_stack.c \
-		stack/stack_handling.c \
 		stack/swap_stack.c \
-		stack/structure_handling.c \
 		stack/push_stack.c \
 		stack/rotate_stack.c \
 		stack/reverse_rotate_stack.c \

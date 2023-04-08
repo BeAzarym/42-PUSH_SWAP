@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/07 11:05:27 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:59:30 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ size_t				ft_convert(char type, va_list ap);
 int					ft_print_char(char c);
 int					ft_printf(const char *format, ...);
 void				ft_print_tab(char **array);
-void	print_stack(t_body *structure_a,
-					t_body *structure_b);
+void				print_stack(t_body *structure_a, t_body *structure_b);
 
 //	ERROR
 void				free_tab(char **array);
@@ -66,13 +65,8 @@ int					is_double(long int nbr, t_body *structure);
 char				**ft_get_arg(int argc, char **argv);
 
 //	STACK
-t_stack				*init_stack(int nbr);
 t_body				*init_body(void);
-t_body				*create_stack(int nbr, t_body *structure);
-t_body				*pop_stack(t_body *structure);
 t_body				*fill_structure(char **array, t_body *structure);
-void				ft_lstadd_front(t_body *structure, t_stack *stack);
-void				ft_lstadd_back(t_body *structure, t_stack *stack);
 
 //	OPERATION
 void				swap_a(t_body *structure);

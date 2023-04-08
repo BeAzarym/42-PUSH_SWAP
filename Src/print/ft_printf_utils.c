@@ -6,11 +6,16 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:23:46 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/03/16 10:32:06 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:59:25 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
+
+int	ft_print_char(char c)
+{
+	return (write(1, &c, 1));
+}
 
 static int	ft_print_str(char *str)
 {
@@ -64,10 +69,6 @@ static size_t	ft_print_nbr_base(unsigned long int n, const char *base)
 	return (len);
 }
 
-int	ft_print_char(char c)
-{
-	return (write(1, &c, 1));
-}
 
 size_t	ft_convert(char type, va_list ap)
 {
