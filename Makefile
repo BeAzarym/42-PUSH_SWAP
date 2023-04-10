@@ -19,6 +19,7 @@ SRC	=	main.c \
 		stack/rotate_stack.c \
 		stack/reverse_rotate_stack.c \
 		sort/sorting.c \
+		sort/position.c \
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
 
@@ -39,7 +40,7 @@ RM	=	@rm -rf
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) -I $(INC_DIR) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -I $(INC_DIR) -o $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS)

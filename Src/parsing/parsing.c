@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/06 18:04:30 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 23:00:35 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	**ft_get_arg(int argc, char **argv)
 		array = malloc(sizeof(char *) * argc);
 		if (!array)
 			return (NULL);
-		while (++i < argc)
+		while (++i < (argc + 1))
 			array[i - 1] = ft_strdup(argv[i]);
 	}
 	if (!is_valid_arg(ft_tablen(array), array))

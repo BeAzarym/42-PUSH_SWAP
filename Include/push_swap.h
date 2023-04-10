@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 19:36:11 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 23:41:19 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ typedef struct s_stack
 {
 	int				content;
 	int				expected_index;
+	int				current_index;
+	int				target_current;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -88,5 +90,7 @@ void				reverse_rotate_ab(t_body *structure_a, t_body *structure_b);
 int					is_sorted(t_stack *stack);
 void				sort_three(t_body *stack);
 void				sort(t_body *stack_a, t_body *stack_b, int size);
+int					get_small_expected_index(t_body *stack);
+void				get_target_current(t_body *stack_a, t_body *stack_b);
 
 #endif

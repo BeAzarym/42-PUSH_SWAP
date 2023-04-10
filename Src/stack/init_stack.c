@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 19:36:41 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:31:56 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ static t_stack	*init_stack(int nbr)
 		return (NULL);
 	new->content = nbr;
 	new->next = NULL;
-	new->expected_index = 0;
+	new->expected_index = -1;
+	new->current_index = -1;
+	new->target_current = -1;
 	return (new);
 }
 static t_body	*create_stack(int nbr, t_body *structure)

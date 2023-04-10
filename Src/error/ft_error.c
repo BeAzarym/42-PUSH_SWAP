@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 20:16:40 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/08 19:44:17 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 23:20:43 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static t_body	*pop_stack(t_body *structure)
 	tmp = structure->head;
 	structure->head = structure->head->next;
 	free(tmp);
+	structure->size--;
 	return (structure);
 }
 
@@ -39,7 +40,7 @@ void	free_tab(char **array)
 
 void	free_stack(t_body *structure)
 {
-	while (structure->head != NULL)
+	while (structure->size != 0)
 		structure = pop_stack(structure);
 	free(structure);
 }
