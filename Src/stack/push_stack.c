@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:43:37 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/08 19:46:26 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:37:02 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static void	push_stack(t_body *src, t_body *dest)
 		return ;
 	src->head = src->head->next;
 	ft_lstadd_front(dest, tmp);
+	src->size--;
+	dest->size++;
 }
 
 void	push_a(t_body *src, t_body *dest)

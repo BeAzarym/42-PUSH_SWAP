@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 17:20:44 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:38:44 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-static void	do_sort(t_body *structure_a, int size)
+static void	do_sort(t_body *structure_a, t_body *structure_b, int size)
 {
 	if (size == 2 && !is_sorted(structure_a->head))
 		rotate_a(structure_a);
 	else if (size == 3)
 		sort_three(structure_a);
 	else if (size > 3 && !is_sorted(structure_a->head))
-		return ;
+		sort(structure_a, structure_b, size);
 }
 
 int	main(int argc, char **argv)
@@ -41,7 +41,6 @@ int	main(int argc, char **argv)
 	char	**array;
 	t_body	*structure_a;
 	t_body	*structure_b;
-	int		size;
 
 	structure_b = NULL;
 	if (argc < 2)
@@ -50,9 +49,8 @@ int	main(int argc, char **argv)
 	structure_a = init_body();
 	structure_b = init_body();
 	structure_a = fill_structure(array, structure_a);
-	size = stack_len(structure_a->head) + 1;
-	computing_theorical_postion(structure_a->head, size);
-	do_sort(structure_a, size);
+	computing_theorical_postion(structure_a->head, structure_a->size);
+	do_sort(structure_a, structure_b, structure_a->size);
 	print_stack(structure_a, structure_b);
 	free_stack(structure_a);
 	free_stack(structure_b);

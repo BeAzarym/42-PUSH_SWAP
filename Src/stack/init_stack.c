@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 15:27:57 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:36:41 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_stack	*init_stack(int nbr)
 		return (NULL);
 	new->content = nbr;
 	new->next = NULL;
-	new->sorted_index = 0;
+	new->expected_index = 0;
 	return (new);
 }
 static t_body	*create_stack(int nbr, t_body *structure)
@@ -41,6 +41,7 @@ static t_body	*create_stack(int nbr, t_body *structure)
 		new->next = structure->head;
 		structure->head = new;
 	}
+	structure->size++;
 	return (structure);
 }
 
@@ -71,6 +72,7 @@ t_body	*init_body(void)
 	structure = malloc(sizeof(t_body));
 	structure->head = NULL;
 	structure->tail = NULL;
+	structure->size = 0;
 	return (structure);
 }
 
@@ -87,9 +89,9 @@ void	computing_theorical_postion(t_stack *stack, int size)
 		value = INT_MIN;
 		while (tmp)
 		{
-			if (tmp->content == INT_MIN && !tmp->sorted_index)
-				tmp->sorted_index = 1;
-			if (tmp->content > value && !tmp->sorted_index)
+			if (tmp->content == INT_MIN && !tmp->expected_index)
+				tmp->expected_index = 1;
+			if (tmp->content > value && !tmp->expected_index)
 			{
 				value = tmp->content;
 				highest = tmp;
@@ -99,6 +101,6 @@ void	computing_theorical_postion(t_stack *stack, int size)
 				tmp = tmp->next;
 		}
 		if (highest)
-			highest->sorted_index = size;
+			highest->expected_index = size;
 	}
 }
