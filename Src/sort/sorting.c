@@ -1,49 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 13:27:59 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 14:06:54 by cchabeau         ###   ########.fr       */
+/*   Created: 2023/04/10 14:56:50 by cchabeau          #+#    #+#             */
+/*   Updated: 2023/04/10 17:06:30 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Include/push_swap.h"
 
-size_t	ft_strlen(const char *s)
+void	sort_three(t_body *stack)
 {
-	size_t	i;
-
-	i = 0;
-
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-size_t	ft_tablen(char **array)
-{
-	size_t	i;
-
-	i = 0;
-	while (array[i] != NULL)
-		i++;
-	return (i);
-}
-
-size_t stack_len(t_stack *stack)
-{
-	int result;
-
-	if (!stack)
-		return (0);
-	result = 0;
-	while (stack->next != NULL)
-	{
-		result++;
-		stack = stack->next;
-	}
-	return (result);
+	if (stack->head->sorted_index == 2)
+		rotate_a(stack);
+	else if (stack->head->next->sorted_index == 2)
+		reverse_rotate_a(stack);
+	if (stack->head->sorted_index > stack->head->next->sorted_index)
+		swap_a(stack);
 }

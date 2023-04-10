@@ -18,6 +18,7 @@ SRC	=	main.c \
 		stack/push_stack.c \
 		stack/rotate_stack.c \
 		stack/reverse_rotate_stack.c \
+		sort/sorting.c \
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
 

@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/08 19:59:30 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:12:48 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,18 @@ typedef struct s_structure
 typedef struct s_stack
 {
 	int				content;
-	int				index;
+	int				sorted_index;
 	struct s_stack	*next;
 }					t_stack;
 
 //	UTILS
 char				**ft_split(char const *s, char c);
-size_t				ft_strlen(const char *s);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_isnumeric(char *str);
 char				*ft_strdup(const char *s);
+size_t				ft_strlen(const char *s);
 size_t				ft_tablen(char **array);
+size_t				stack_len(t_stack *stack);
 void				ft_putstr_fd(char *s, int fd);
 long int			ft_atoi(const char *str);
 
@@ -67,6 +68,7 @@ char				**ft_get_arg(int argc, char **argv);
 //	STACK
 t_body				*init_body(void);
 t_body				*fill_structure(char **array, t_body *structure);
+void				computing_theorical_postion(t_stack *stack, int size);
 
 //	OPERATION
 void				swap_a(t_body *structure);
@@ -80,5 +82,9 @@ void				rotate_ab(t_body *structure_a, t_body *structure_b);
 void				reverse_rotate_a(t_body *structure);
 void				reverse_rotate_b(t_body *structure);
 void				reverse_rotate_ab(t_body *structure_a, t_body *structure_b);
+
+// SORT
+int					is_sorted(t_stack *stack);
+void				sort_three(t_body *stack);
 
 #endif

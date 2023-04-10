@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/08 19:52:58 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:27:57 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_stack	*init_stack(int nbr)
 		return (NULL);
 	new->content = nbr;
 	new->next = NULL;
-	new->index = 0;
+	new->sorted_index = 0;
 	return (new);
 }
 static t_body	*create_stack(int nbr, t_body *structure)
@@ -72,4 +72,33 @@ t_body	*init_body(void)
 	structure->head = NULL;
 	structure->tail = NULL;
 	return (structure);
+}
+
+void	computing_theorical_postion(t_stack *stack, int size)
+{
+	t_stack	*tmp;
+	t_stack	*highest;
+	int		value;
+
+	while (--size > 0)
+	{
+		tmp = stack;
+		highest = NULL;
+		value = INT_MIN;
+		while (tmp)
+		{
+			if (tmp->content == INT_MIN && !tmp->sorted_index)
+				tmp->sorted_index = 1;
+			if (tmp->content > value && !tmp->sorted_index)
+			{
+				value = tmp->content;
+				highest = tmp;
+				tmp = stack;
+			}
+			else
+				tmp = tmp->next;
+		}
+		if (highest)
+			highest->sorted_index = size;
+	}
 }
