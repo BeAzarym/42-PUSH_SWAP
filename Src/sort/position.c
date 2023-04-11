@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:29:19 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 23:48:55 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:16:02 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	get_small_expected_index(t_body *stack)
 	t_stack *tmp;
 
 	lower_expected_index = INT_MAX;
-	get_index(stack);
 	tmp = stack->head;
+	get_index(stack);
 	lower_current_index = tmp->current_index;
 	while (tmp)
 	{

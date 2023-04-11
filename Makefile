@@ -20,6 +20,8 @@ SRC	=	main.c \
 		stack/reverse_rotate_stack.c \
 		sort/sorting.c \
 		sort/position.c \
+		sort/pricing.c \
+		sort/solving.c \
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
 
@@ -28,7 +30,7 @@ OBJS	=	$(SRCS:.c=.o)
 INC_DIR = Include
 SRC_DIR = Src
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 CC	=	gcc
 

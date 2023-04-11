@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 16:31:38 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 16:33:32 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:59:38 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ static void	rotate(t_body *structure)
 {
 	t_stack	*tmp;
 
-	if (!structure || !structure->head->next)
+	if (!structure->head || structure->size < 2)
 		return ;
 	tmp = structure->head->next;
 	structure->head->next = NULL;
 	structure->tail->next = structure->head;
+	structure->tail = structure->head;
 	structure->head = tmp;
 }
 

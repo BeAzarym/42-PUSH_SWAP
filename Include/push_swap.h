@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 23:41:19 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:30:13 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define ABS(Value) (Value < 0 ? -Value : Value)
 
 enum				e_type
 {
@@ -38,6 +40,8 @@ typedef struct s_stack
 	int				expected_index;
 	int				current_index;
 	int				target_current;
+	int				price_a;
+	int				price_b;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -89,8 +93,13 @@ void				reverse_rotate_ab(t_body *structure_a, t_body *structure_b);
 // SORT
 int					is_sorted(t_stack *stack);
 void				sort_three(t_body *stack);
-void				sort(t_body *stack_a, t_body *stack_b, int size);
+void				sort(t_body *stack_a, t_body *stack_b);
 int					get_small_expected_index(t_body *stack);
 void				get_target_current(t_body *stack_a, t_body *stack_b);
+void				get_price(t_body *stack_a, t_body *stack_b);
+void				do_sales(t_body *stack_a, t_body *stack_b);
+void				solve(t_body *stack_a, t_body *stack_b, int price_a,
+						int price_b);
+						
 
 #endif

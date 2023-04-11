@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 16:31:33 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/10 16:33:27 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:59:43 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	reverse_rotate(t_body *structure)
 {
 	t_stack *tmp;
 
-	if (!structure || !structure->head->next)
+	if (!structure->head || structure->size < 3)
 		return ;
 	tmp = structure->head;
 	while (tmp && tmp->next->next != NULL)
