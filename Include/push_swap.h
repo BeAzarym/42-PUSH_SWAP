@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/11 02:30:13 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:21:18 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,5 @@ void				get_price(t_body *stack_a, t_body *stack_b);
 void				do_sales(t_body *stack_a, t_body *stack_b);
 void				solve(t_body *stack_a, t_body *stack_b, int price_a,
 						int price_b);
-						
 
 #endif
