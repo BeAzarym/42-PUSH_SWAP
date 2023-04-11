@@ -1,4 +1,5 @@
 NAME	=	push_swap
+BONUS	=	checker
 
 SRC	=	main.c \
 		parsing/parsing.c \
@@ -23,14 +24,19 @@ SRC	=	main.c \
 		sort/pricing.c \
 		sort/solving.c \
 
+SRC_BONUS = \
+
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
+SRCS_BONUS = $(addprefix $(BONUS_DIR)/, $(SRC_BONUS))
 
-OBJS	=	$(SRCS:.c=.o)
+OBJS		=	$(SRCS:.c=.o)
+OBJS_BONUS	=	$(SRC_BONUS:.c=.o)
 
-INC_DIR = Include
-SRC_DIR = Src
+INC_DIR = include
+SRC_DIR = src
+BONUS_DIR = bonus
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror
 
 CC	=	gcc
 
@@ -44,11 +50,17 @@ all:	$(NAME)
 $(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -o $(NAME) $(OBJS)
 
+$(BONUS):	$(OBJS_BONUS)
+	$(CC) $(CFLAGS) -I $(INC_DIR) -o $(BONUS) $(OBJS_BONUS)
+
 clean:
 	$(RM) $(OBJS)
+	$(RM) $(OBJS_BONUS)
+	
 
 fclean:	clean
 	$(RM) $(NAME)
+	$(RM) $(BONUS)
 
 re:	fclean all
 
