@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:56:50 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/11 20:43:26 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/12 11:21:10 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 static int	get_highest_index(t_stack *stack)
 {
 	int		index;
-	t_stack	*tmp;
 
-	tmp = stack;
 	index = stack->expected_index;
-	while (tmp)
+	while (stack)
 	{
-		if (index < tmp->expected_index)
-			index = tmp->expected_index;
-		tmp = tmp->next;
+		if (index < stack->expected_index)
+			index = stack->expected_index;
+		stack = stack->next;
 	}
 	return (index);
 }

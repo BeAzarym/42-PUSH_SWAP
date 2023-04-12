@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/11 20:35:58 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/12 11:23:33 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	is_sorted(t_stack *stack)
 		return (0);
 	while (stack->next)
 	{
-		if (stack->content > stack->next->content)
+		if (stack->content < stack->next->content)
 			stack = stack->next;
 		else
 			return (0);
@@ -51,7 +51,6 @@ int	main(int argc, char **argv)
 	structure_b = init_body();
 	computing_theorical_postion(structure_a->head, (structure_a->size + 1));
 	do_sort(structure_a, structure_b, structure_a->size);
-	print_stack(structure_a, structure_b);
 	free_stack(structure_a);
 	free_stack(structure_b);
 	return (0);
