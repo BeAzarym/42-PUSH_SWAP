@@ -6,13 +6,13 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:48:06 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/12 16:14:54 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:40:40 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/checker_bonus.h"
 
-int do_op(t_body *stack_a, t_body *stack_b, char *line)
+int	do_op(t_body *stack_a, t_body *stack_b, char *line)
 {
 	if (!ft_strcmp(line, "sa\n"))
 		swap_a(stack_a);
@@ -37,6 +37,6 @@ int do_op(t_body *stack_a, t_body *stack_b, char *line)
 	else if (!ft_strcmp(line, "rrr\n"))
 		reverse_rotate_ab(stack_a, stack_b);
 	else
-		return(0);
+		return (0);
 	return (1);
 }

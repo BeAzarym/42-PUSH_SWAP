@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 20:16:40 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/11 22:00:55 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:40:35 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	free_stack(t_body *structure)
 void	ft_error(void *ptr, int type)
 {
 	if (type == ARRAY)
-			free_tab(ptr);
+		free_tab(ptr);
 	else if (type == T_STACK)
 		free_stack(ptr);
 	else if (type == STR)
