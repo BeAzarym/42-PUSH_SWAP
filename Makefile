@@ -24,13 +24,31 @@ SRC	=	main.c \
 		sort/pricing.c \
 		sort/solving.c \
 
-SRC_BONUS = \
+SRC_BONUS = checker_bonus.c \
+			parsing/parsing_bonus.c \
+			error/ft_error_bonus.c \
+			utils/ft_putstr_fd_bonus.c \
+			utils/ft_split_bonus.c \
+			utils/ft_strlen_bonus.c \
+			utils/ft_isnumeric_bonus.c \
+			utils/ft_strcmp_bonus.c \
+			utils/ft_strdup_bonus.c \
+			utils/ft_atoi_bonus.c \
+			stack/init_stack_bonus.c \
+			stack/swap_stack_bonus.c \
+			stack/push_stack_bonus.c \
+			stack/rotate_stack_bonus.c \
+			stack/reverse_rotate_stack_bonus.c \
+			operation/do_op.c \
+			gnl/get_next_line_bonus.c \
+			gnl/get_next_line_utils_bonus.c \
+
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
 SRCS_BONUS = $(addprefix $(BONUS_DIR)/, $(SRC_BONUS))
 
 OBJS		=	$(SRCS:.c=.o)
-OBJS_BONUS	=	$(SRC_BONUS:.c=.o)
+OBJS_BONUS	=	$(SRCS_BONUS:.c=.o)
 
 INC_DIR = include
 SRC_DIR = src
@@ -46,6 +64,8 @@ RM	=	@rm -rf
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all:	$(NAME)
+
+bonus:	$(BONUS)
 
 $(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -o $(NAME) $(OBJS)
