@@ -39,7 +39,7 @@ SRC_BONUS = checker_bonus.c \
 			stack/push_stack_bonus.c \
 			stack/rotate_stack_bonus.c \
 			stack/reverse_rotate_stack_bonus.c \
-			operation/do_op.c \
+			operation/do_op_bonus.c \
 			gnl/get_next_line_bonus.c \
 			gnl/get_next_line_utils_bonus.c \
 
