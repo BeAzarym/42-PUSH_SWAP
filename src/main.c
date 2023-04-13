@@ -6,11 +6,26 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/13 17:12:54 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/13 20:28:33 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+static void	clean_all(t_body *stack_a, t_body *stack_b)
+{
+	if (stack_a && !stack_b)
+		free_stack(stack_a);
+	else if (stack_b && !stack_a)
+		free_stack(stack_b);
+	else
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+	}
+	ft_putstr_fd("Error\n", 2);
+	exit(EXIT_FAILURE);
+}
 
 int	is_sorted(t_stack *stack)
 {
@@ -57,7 +72,7 @@ int	main(int argc, char **argv)
 	structure_a = fill_structure(array, structure_a);
 	structure_b = init_body();
 	if (!structure_b)
-		ft_error(structure_b, T_STACK);
+		clean_all(structure_a, structure_b);
 	computing_theorical_postion(structure_a->head, (structure_a->size + 1));
 	do_sort(structure_a, structure_b, structure_a->size);
 	free_stack(structure_a);
