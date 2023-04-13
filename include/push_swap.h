@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:44:02 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/11 17:21:18 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:50:36 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ long int			ft_atoi(const char *str);
 size_t				ft_convert(char type, va_list ap);
 int					ft_print_char(char c);
 int					ft_printf(const char *format, ...);
-void				ft_print_tab(char **array);
-void				print_stack(t_body *structure_a, t_body *structure_b);
 
 //	ERROR
 void				free_tab(char **array);

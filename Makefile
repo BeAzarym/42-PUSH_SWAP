@@ -3,7 +3,6 @@ BONUS	=	checker
 
 SRC	=	main.c \
 		parsing/parsing.c \
-		print/ft_print_tab.c \
 		print/ft_printf.c \
 		print/ft_printf_utils.c \
 		print/ft_putstr_fd.c \
