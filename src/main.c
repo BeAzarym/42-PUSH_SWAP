@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/13 20:28:33 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:25:46 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	clean_all(t_body *stack_a, t_body *stack_b)
 		free_stack(stack_a);
 	else if (stack_b && !stack_a)
 		free_stack(stack_b);
-	else
+	else if (stack_a && stack_b)
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);
