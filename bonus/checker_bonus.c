@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 20:53:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/12 16:25:12 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/13 14:47:57 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ static int	checker(t_body *stack_a, t_body *stack_b)
 		free(line);
 	}
 	if (is_sorted(stack_a->head))
+	{
+		result = 0;
 		ft_putstr_fd("OK\n", 1);
+	}
 	else
 		ft_putstr_fd("KO\n", 1);
 	return (result);
@@ -60,9 +63,18 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	array = ft_get_arg(argc, argv);
+	if (!array)
+		ft_error(array, ARRAY);
 	structure_a = init_body();
+	if (!structure_a)
+	{
+		free(array);
+		ft_error(structure_a, T_STACK);
+	}
 	structure_a = fill_structure(array, structure_a);
 	structure_b = init_body();
+	if (!structure_b)
+		ft_error(structure_b, T_STACK);
 	result = checker(structure_a, structure_b);
 	free_stack(structure_a);
 	free_stack(structure_b);

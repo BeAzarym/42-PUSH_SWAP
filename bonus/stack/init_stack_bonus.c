@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:16:31 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/11 21:32:05 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:29:59 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ t_body	*init_body(void)
 	t_body	*structure;
 
 	structure = malloc(sizeof(t_body));
+	if (!structure)
+		return (NULL);
 	structure->head = NULL;
 	structure->tail = NULL;
 	structure->size = 0;
