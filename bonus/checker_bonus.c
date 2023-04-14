@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 20:53:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/13 21:26:05 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/14 11:54:58 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	main(int argc, char **argv)
 	}
 	structure_a = fill_structure(array, structure_a);
 	structure_b = init_body();
-	if (!structure_b)
+	if (!structure_b || !structure_a)
 		clean_all(structure_a, structure_b, NULL);
 	result = checker(structure_a, structure_b);
 	free_stack(structure_a);

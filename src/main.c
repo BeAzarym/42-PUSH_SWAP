@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:05:00 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/13 21:25:46 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/14 11:55:42 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	}
 	structure_a = fill_structure(array, structure_a);
 	structure_b = init_body();
-	if (!structure_b)
+	if (!structure_b || !structure_a)
 		clean_all(structure_a, structure_b);
 	computing_theorical_postion(structure_a->head, (structure_a->size + 1));
 	do_sort(structure_a, structure_b, structure_a->size);
