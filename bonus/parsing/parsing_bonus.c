@@ -6,7 +6,7 @@
 /*   By: cchabeau <cchabeau@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:44 by cchabeau          #+#    #+#             */
-/*   Updated: 2023/04/13 17:05:21 by cchabeau         ###   ########.fr       */
+/*   Updated: 2023/04/25 19:28:46 by cchabeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,11 @@ char	**ft_get_arg(int argc, char **argv)
 		if (!array)
 			return (NULL);
 		while (++i < (argc + 1))
+		{
 			array[i - 1] = ft_strdup(argv[i]);
+			if (!array[i])
+				return (NULL);
+		}
 	}
 	if (!is_valid_arg(ft_tablen(array), array))
 		ft_error(array, ARRAY);
